@@ -22,7 +22,7 @@ cp target/tomcat-sample.war /usr/local/tomcat/webapps
 
 ブラウザで以下のURLに入るとHello Guice Servletと表示される。
 
-http://localhost:8081/tomcat-sample/helloGuiceServlet2
+http://localhost:8081/tomcat-sample/helloGuiceServlet
 
 
 ## その他
