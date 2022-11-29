@@ -1,11 +1,34 @@
-# guice-sample(WIP)
+# guice-sample
 
 ## 概要
 
-ローカル開発環境作成用に、Docker+Tomcat9+Mavenの雛形を作成しました。
+Tomcat9でのGuiceの最小サンプルです。
 
-繰り返し使用できるよう、テンプレートリポジトリとして公開しています。
+## 使い方
 
-作業ログは以下のブログに公開しています
+ホスト側で
 
-https://tunemage.hatenablog.com/entry/2022/11/26/142940
+```
+docker-compose up -d
+docker exec -it guice-sample-app-1 bash
+```
+
+コンテナ側で
+
+```
+mvn package
+cp target/tomcat-sample.war /usr/local/tomcat/webapps
+```
+
+ブラウザで以下のURLに入るとHello Guice Servletと表示される。
+
+http://localhost:8081/tomcat-sample/helloGuiceServlet2
+
+
+## その他
+
+Tomcat9系で検証する必要があったため、Tomcat9のイメージをベースにしています。
+
+pom.xmlの依存ライブラリもそれに合わせて古くなっています。
+
+Tomcat10系から、Servlet等のパッケージ名がjakaltaに変わるので、参考にする場合はご注意ください。
